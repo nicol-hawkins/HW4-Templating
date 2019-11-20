@@ -4,7 +4,7 @@ def main():
         output = page["output"]
         title = page["title"]
 
-        # read in the content which
+        # Read in the content which
         # is located is now stored in file_name
         content = open(file_name).read()
         template = page_builder(content, title)
@@ -17,7 +17,7 @@ def main():
         open(page["output"], "w+").write(template)
        
 
-# This function constructs are webpage by replacing
+# This function constructs the webpage by replacing
 # empty braces with actual content and titles within
 # the newly constructed base template.
 def page_builder(content, title):
@@ -27,28 +27,45 @@ def page_builder(content, title):
     return finished_page
 
 
-pages = [
-{
-    "filename": "content/about.html",
-    "output": "docs/about.html",
-    "title": "About Me",
-},
-    {
+import glob
+all_html_files = glob.glob("content/*.html")
+print(all_html_files)
+
+import os
+file_path = "content/.html"
+file_name = os.path.basename(file_path)
+print(file_name)
+name_only, extension = os.path.splitext(file_name)
+print(name_only)
+
+for file_path in glob.glob("content/*.html"):
+    print(file_path)
+
+
+
+pages = []
+pages.append({
     "filename": "content/index.html",
-    "output": "docs/index.html",
-    "title": "My Blog",
-},
-    {
+    "title": "Index",
+    "output": "docs/index.html"
+    })
+
+pages.append({
+    "filename": "content/about.html",
+    "title": "About",
+    "output": "docs/about.html"
+    })
+
+pages.append({
     "filename": "content/resume.html",
-    "output": "docs/resume.html",
-    "title": "My Resume",
-},
-]
+    "title": "Resume",
+    "output": "docs/resume.html"
+    })
+
+print(pages)
    
 if __name__ == "__main__":
     main()
-
-
 
 
 
