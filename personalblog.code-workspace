@@ -5,6 +5,7 @@
 		}
 	],
 	"settings": {
-		"terminal.integrated.fontSize": 15
+		"terminal.integrated.fontSize": 15,
+		"python.pythonPath": "/Users/hello/.local/share/virtualenvs/personalblog-J--xzdVL/bin/python"
 	}
 }
