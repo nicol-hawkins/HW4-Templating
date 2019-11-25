@@ -13,7 +13,13 @@
 {{content}}
 
 
-
+{% for page in pages %}
+    {% if page is current page %}
+    <a href ="{{ page.output_file }}" class="btn--active">{{ page.title }}</a>
+    {% elif %}
+    <a href ="{{ page.output_file }}" class="btn">{{ page.title }}</a>
+    {% endif %}
+{% endfor %}
 
 
 
