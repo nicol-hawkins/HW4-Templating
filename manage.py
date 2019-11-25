@@ -8,7 +8,7 @@ if command == "build":
     create_pages_list()
     main()
 elif command == "new":
-    
+    # Need help with what goes here
 elif command == None:
     print('''Usage:
                 Rebuild site: python manage.py build
